@@ -1,34 +1,78 @@
-# MCP Server - SaaS Platform Integration
+# MCP Server - MongoDB Connected Platform
 
-A MongoDB Connected Platform (MCP) server for managing e-commerce operations and analytics. Built with Node.js and TypeScript.
+![Node.js](https://img.shields.io/badge/Node.js-18.x-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-7.x-green)
 
-## Features
+A secure middleware server connecting to MongoDB with read-only analytics capabilities and e-commerce management features.
 
-- MongoDB database integration
-- Order management system
-- Customer relationship management
-- Product information services
-- Read-only analytics with aggregation pipelines
-- Type-safe API endpoints
-- Modular architecture
 
 ## Table of Contents
-
+- [Features](#features)
 - [Setup Instructions](#setup-instructions)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Environment Configuration](#environment-configuration)
 - [API Documentation](#api-documentation)
-- [Development Details](#development-details)
+  - [Order Management](#order-management)
+  - [Customer Management](#customer-management)
+  - [Product Services](#product-services)
+  - [Analytics](#analytics)
+- [Development Guide](#development-guide)
+  - [Project Structure](#project-structure)
+  - [Available Scripts](#available-scripts)
+  - [Coding Standards](#coding-standards)
 - [License](#license)
+
+## Features
+- 🔒 Secure MongoDB connection
+- 📊 Read-only aggregation pipelines
+- 📦 Order lifecycle management
+- 👥 Customer CRUD operations
+- 📈 Business analytics endpoints
+- 🛡️ Aggregation pipeline validation
+- 📦 Modular TypeScript architecture
 
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js v16+
-- MongoDB Atlas URI
-- npm v7+
+- Node.js v18+
+- npm v9+
+- MongoDB Atlas account
+- TypeScript v5+
+
+### File Structure
+mcp-server/
+├── src/
+│   ├── config/
+│   │   ├── env.ts
+│   │   └── constants.ts
+│   ├── handlers/
+│   │   ├── resource.handler.ts
+│   │   ├── tool.handler.ts
+│   │   └── prompt.handler.ts
+│   ├── services/
+│   │   └── database.service.ts
+│   ├── types/
+│   │   └── index.ts
+│   └── index.ts
+├── test/
+│   └── unit/
+│       └── handlers/
+│           └── resource.test.ts
+├── .env.example
+├── tsconfig.json
+├── package.json
+└── README.md
 
 ### Installation
-
-1. Clone the repository:
 ```bash
+# Clone repository
 git clone https://github.com/manishankarvakta/ad-pos-mcp-server.git
-cd mcp-server
+cd ad-pos-mcp-server
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
