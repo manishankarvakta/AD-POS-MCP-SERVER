@@ -18,7 +18,10 @@ interface PromptResponse {
 
 // We'll use the any type here as a workaround
 // since the SDK's Server type doesn't match our expected interface
-export function getPromptTemplate(server: any) {
+export function getPromptTemplate(
+  //@ts-ignore
+  server: any,
+) {
   server.prompt("create_sales_order", async (args: unknown) => {
     const typedArgs = args as SalesOrderArgs;
 
